@@ -1,0 +1,508 @@
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    overflow: hidden; /* Mencegah konten keluar dari area hero */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/hero-bg.jpg") center/cover no-repeat;
+    background-attachment: fixed; /* Untuk efek parallax */
+    filter: blur(8px); /* Efek blur */
+    z-index: -1; /* Memastikan blur berada di belakang teks */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    z-index: 1; /* Menjaga teks tetap di atas blur */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin-bottom: 2rem;
+    z-index: 1; /* Menjaga teks tetap di atas blur */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    z-index: 1; /* Menjaga tombol tetap di atas blur */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.about, .contact {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #007bff;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px; /* Lebar maksimum konten */
+    margin: 0 auto; /* Menengahkan secara horizontal */
+    padding: 0 20px; /* Margin kiri dan kanan */
+}
+
+.about-text {
+    text-align: center;
+    width: 100%;
+    font-size: 1.1rem; /* Ukuran font dasar lebih besar */
+    line-height: 1.8; /* Jarak antar baris lebih lega */
+}
+
+.about-text p {
+    max-width: 800px; /* Lebar maksimum paragraf */
+    margin-left: auto;
+    margin-right: auto; /* Menengahkan paragraf */
+    font-size: 1.3rem; /* Ukuran khusus untuk paragraf */
+    margin-bottom: 0.5rem; /* Jarak antar paragraf */
+}
+
+.about-text h3 {
+    font-weight: bold;
+    font-size: 1.8rem; /* Ukuran untuk judul "Keahlian Saya" */
+    margin-bottom: 1.5rem;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    max-width: 100%;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    max-width: 100%;
+}
+
+.skill-tag {
+    background-color: #e9ecef;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 1.1rem; /* Ukuran font untuk skill tags */
+    padding: 0.6rem 1.2rem; /* Padding lebih besar */
+}
+
+.projects {
+    background-color: #e9ecef;
+    padding: 5rem 2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.contact-info p{
+    text-decoration: none;
+}
+
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    background-color: #f1f8ff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5rem;
+    color: #007bff;
+    font-size: 24px;
+}
+
+/* Penyesuaian untuk email dalam kotak kontak */
+.contact-details p {
+    word-break: break-word; /* Memecah kata yang panjang */
+    overflow-wrap: break-word; /* Alternatif untuk memecah kata */
+    font-size: 1rem; /* Ukuran font yang lebih kecil */
+}
+
+
+.contact-details h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.contact-details a {
+    color: #007bff;
+    text-decoration: none; /* Menghapus garis bawah */
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.contact-details a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.contact-details p {
+    text-decoration: none;
+}
+
+/* Menghapus underline pada email */
+.contact-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-card-link:hover {
+    text-decoration: none;
+}
+
+.contact-card-link .contact-details p {
+    text-decoration: none;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+#scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+    /* Menu Mobile */
+    .mobile-menu-btn {
+        display: none; /* Menyembunyikan tombol menu pada desktop */
+        font-size: 1.5rem;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    
+    .about-content {
+        padding: 0 15px;
+    }
+    
+    .about-text {
+        padding: 0 1rem; /* Memberikan padding di mobile */
+        font-size: 1.2rem;
+    }
+    
+    .about-text p {
+        max-width: 100%; /* Memastikan teks tidak terlalu lebar di mobile */
+        font-size: 1.3rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.7rem;
+    }
+
+    .skill-tag {
+        font-size: 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        display: none; /* Menyembunyikan nav normal pada perangkat mobile */
+    }
+
+    .contact-card {
+        padding: 1rem; /* Mengurangi padding pada mobile */
+    }
+    
+    .contact-icon {
+        width: 45px; /* Ukuran icon yang lebih kecil */
+        height: 45px;
+        margin-right: 1rem; /* Margin yang lebih kecil */
+        font-size: 25px; /* Ukuran font icon yang lebih kecil */
+    }
+    
+    .contact-details h3 {
+        font-size: 1.2rem; /* Judul yang lebih kecil */
+    }
+    
+    .contact-details p {
+        font-size: 1rem; /* Teks email yang lebih kecil */
+    }
+
+    .mobile-menu-btn {
+        display: block; /* Pastikan tombol muncul */
+        font-size: 1.5rem;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #343a40;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 200;
+        transform: translateX(-100%); /* Menyembunyikan menu */
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-menu.active {
+    transform: translateX(0); /* Menampilkan menu */
+    }
+
+    .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    }
+
+        .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2rem;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+/* Untuk layar sangat kecil */
+@media (max-width: 375px) {
+    contact-card {
+        flex-direction: row; /* Tetap horizontal seperti pada 768px */
+        align-items: center;
+        padding: 0.8rem; /* Padding yang lebih kecil */
+    }
+    
+    .contact-icon {
+        width: 40px; /* Icon yang lebih kecil lagi */
+        height: 40px;
+        margin-right: 0.8rem; /* Margin yang lebih kecil */
+        font-size: 19px; /* Font icon yang lebih kecil */
+        min-width: 40px; /* Memastikan icon tidak mengecil lebih jauh */
+    }
+    
+    .contact-details {
+        flex: 1; /* Mengambil sisa ruang yang tersedia */
+    }
+    
+    .contact-details h3 {
+        font-size: 1rem; /* Judul yang lebih kecil */
+        margin-bottom: 0.3rem; /* Margin bawah yang lebih kecil */
+    }
+    
+    .contact-details p{
+        font-size: 0.8rem; /* Teks email yang lebih kecil lagi */
+        line-height: 1.2; /* Line height yang lebih kecil untuk menghemat ruang */
+    }
+}
