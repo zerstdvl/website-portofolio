@@ -1,9 +1,9 @@
-        // Java/JavaScript untuk fungsionalitas interaktif
+        //JavaScript to fungsionalitas interaktif
         document.addEventListener('scroll', function() {
             const heroSection = document.querySelector('.hero');
             const scrollPosition = window.scrollY;
             
-            // Menyesuaikan background position untuk efek parallax
+            // Adjust background position for parralax effect
             heroSection.style.backgroundPosition = 'center ' + (scrollPosition * 0.5) + 'px';
         });
         
@@ -21,7 +21,7 @@
                     mobileMenu.classList.remove("active");
                 });
         
-                // Klik di luar menu untuk menutupnya
+                // Click Outside to close menu
                 document.addEventListener("click", function (event) {
                     if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
                         mobileMenu.classList.remove("active");

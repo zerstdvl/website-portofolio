@@ -1,27 +1,27 @@
 <?php
-// Ambil data portofolio
+// Get portofolio data
 $result = $conn->query("SELECT * FROM portfolio LIMIT 1");
 $portfolioData = $result->fetch_assoc();
 
-// Ambil data skills
+// Get skills data
 $skills = [];
 $skillResult = $conn->query("SELECT skill_name FROM skills");
 while ($row = $skillResult->fetch_assoc()) {
     $skills[] = $row['skill_name'];
 }
 
-// Ambil data projects
+// Get projects data
 $projects = [];
 $projectResult = $conn->query("SELECT title, description, image FROM projects");
 while ($row = $projectResult->fetch_assoc()) {
     $projects[] = $row;
 }
 
-// Ambil data kontak
+// Get contacts data
 $contactResult = $conn->query("SELECT * FROM contact LIMIT 1");
 $contactData = $contactResult->fetch_assoc();
 
-// Function untuk menampilkan skills
+// Function to display skills
 function displaySkills($skills) {
     $html = '';
     foreach ($skills as $skill) {
@@ -30,7 +30,7 @@ function displaySkills($skills) {
     return $html;
 }
 
-// Function untuk menampilkan projects
+// Function to display projects
 function displayProjects($projects) {
     $html = '';
     foreach ($projects as $project) {

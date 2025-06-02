@@ -1,14 +1,14 @@
 <?php
-$host = "localhost"; // Sesuaikan dengan host database Anda
+$host = "localhost"; // Configure According your database
 $user = "root"; // Username MySQL (default: root)
-$password = ""; // Password MySQL (kosong jika di localhost)
-$dbname = "portfolio_db"; // Nama database
+$password = ""; // Password MySQL (Leave this blank if default config on localhost.)
+$dbname = "portfolio_db"; // Name database
 
-// Buat koneksi
+// Connection to database
 $conn = new mysqli($host, $user, $password, $dbname);
 
-// Periksa koneksi
+// Check Connection
 if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>

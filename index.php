@@ -1,5 +1,5 @@
 <?php
-// Sertakan koneksi database
+// Include database connection
 require 'config.php';
 require 'function.php';
 ?>
@@ -26,7 +26,7 @@ require 'function.php';
                 <a href="#projects">Project</a>
                 <a href="#contact">Contact</a>
             </div>
-            <button class="mobile-menu-btn">☰</button> <!-- Menu tombol mobile -->
+            <button class="mobile-menu-btn">☰</button> <!-- Hamburger Button mobile -->
         </nav>
     </header>
 
@@ -42,7 +42,7 @@ require 'function.php';
         <h1><?php echo $portfolioData['name']; ?></h1>
         <p><?php echo $portfolioData['title']; ?></p>
         <p><?php echo $portfolioData['about']; ?></p>
-        <a href="#contact" class="btn">Hubungi Saya</a>
+        <a href="#contact" class="btn">Contact Me</a>
     </section>
 
     <section id="about" class="about">
@@ -59,7 +59,7 @@ require 'function.php';
                             <span class="skill-tag"><?php echo htmlspecialchars($skill); ?></span>
                         <?php endforeach; ?>
                     <?php else: ?>
-                        <p>Belum ada skill yang ditambahkan.</p>
+                        <p>Skills not added yet.</p>
                     <?php endif; ?>
                 </div>
                 <div class="about-image">
@@ -92,7 +92,7 @@ require 'function.php';
                             <?php if (!empty($contactData) && isset($contactData['email'])): ?>
                                 <p><?php echo htmlspecialchars($contactData['email']); ?></p>
                             <?php else: ?>
-                                <p>Email tidak tersedia</p>
+                                <p>Email not available.</p>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -112,7 +112,7 @@ require 'function.php';
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
             <?php else: ?>
-                <span>LinkedIn tidak tersedia</span>
+                <span>LinkedIn not available.</span>
             <?php endif; ?>
 
             <?php if (!empty($contactData) && isset($contactData['github'])): ?>
@@ -120,7 +120,7 @@ require 'function.php';
                     <i class="fa-brands fa-github"></i>
                 </a>
             <?php else: ?>
-                <span>GitHub tidak tersedia</span>
+                <span>GitHub not available.</span>
             <?php endif; ?>
 
             <?php if (!empty($contactData) && isset($contactData['instagram'])): ?>
@@ -128,7 +128,7 @@ require 'function.php';
                     <i class="fa-brands fa-instagram"></i>
                 </a>
             <?php else: ?>
-                <span>Instagram tidak tersedia</span>
+                <span>Instagram not available.</span>
             <?php endif; ?>
 
             <?php if (!empty($contactData) && isset($contactData['twitter'])): ?>
